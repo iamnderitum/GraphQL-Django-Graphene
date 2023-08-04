@@ -16,7 +16,7 @@ class CartItem(models.Model):
 
 class Cart(models.Model):
     owner =  models.CharField(max_length=50, null=True, blank=True)
-    cartItems = models.ForeignKey("graphQLapi.CartItem", on_delete=models.CASCADE)
+    cartItems = models.ForeignKey("graphQLapi.CartItem",blank=True, null=True, on_delete=models.CASCADE)
     user = models.ForeignKey('core.User',null=True, blank=True, on_delete=models.CASCADE)
 
 

@@ -1,0 +1,57 @@
+[
+    {
+        "model": "graphQLapi.cartitem",
+        "pk": 1,
+        "fields": {
+          "itemName": "2 Seater Mahogany Couch",
+          "itemNo": 10,
+          "quantity": 7,
+          "amount": 33000
+        }
+    },
+    {
+        "model": "graphQLapi.cartitem",
+        "pk": 2,
+        "fields": {
+          "itemName": "Samsung TV 82 Inch",
+          "itemNo": 20,
+          "quantity": 5,
+          "amount": 53000
+        }
+    },
+    {
+        "model": "graphQLapi.cartitem",
+        "pk": 3,
+        "fields": {
+          "itemName": "Samsung G23 Android Phone",
+          "itemNo": 30,
+          "quantity": 2,
+          "amount": 43000
+        }
+    },
+    {
+      "model": "graphQLapi.cart",
+      "pk": 1,
+      "fields": {
+        "owner": "Moses Wambui",
+        "cartItems": 1
+      }
+    },
+    {
+        "model": "graphQLapi.cart",
+        "pk": 1,
+        "fields": {
+          "owner": "Moses Wambui",
+          "cartItems": 2
+        }
+    },
+
+    {
+      "model": "graphQLapi.cart",
+      "pk": 2,
+      "fields": {
+        "owner": "Ndungu Nderitu",
+        "cartItems": 3
+      }
+    }
+]

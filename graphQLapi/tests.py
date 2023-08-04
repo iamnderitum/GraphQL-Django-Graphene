@@ -29,4 +29,42 @@ class GraphQLCartTest(GraphQLTestCase):
 
         self.assertEqual(res.status_code, 200)
         self.assertEqual(expected, res.json())
+
+    def test_create_cart(self):
+        expected = {
+            "data": {
+                "ok":True,
+                "cart": {
+                    "id": 3,
+                    "owner": "David Mwangi",
+                    "cartItems": 
+                    {
+                        "itemName": "Dell Laptop Gaming",
+                        "itemNo": 40,
+                        "quantity": 5,
+                        "amount": 450000
+                    }
+                }
+            }
+        }
+
+        res = self.query(
+            """
+            mutation createCart{
+                createCart(input: {
+                    owner: "David Mwangi"
+                }){
+                    ok
+                    cart{
+                        id
+                        owner
+                        
+                    }
+                }
+            }
+            """
+        )
+        self.assertEqual(res.status_code, 200)
+        self.assertEqual(expected, res.json())
+
             

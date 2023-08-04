@@ -17,5 +17,15 @@ class Cart(DjangoObjectType):
 
 class Query(graphene.ObjectType):
     user = graphene.Field(User, id=graphene.Int())
+    cart = graphene.Field(Cart, id=graphene.Int())
+    cart_items = graphene.Field(CartItem, id=graphene.Int())
+    
+    def resolve_cart(self, info, **kwargs):
+        id = kwargs.get("id")
+
+        if id is not None:
+            return models.Cart.objects.get(pk=id)
+        
+        return None
 
 schema = graphene.Schema(query=Query)

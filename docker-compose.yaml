@@ -1,6 +1,6 @@
 version: '3.0'
 services:
   graphql_api:
-  build: .
-  ports:
-    - '8000:8000'
+    build: .
+    ports:
+      - '8000:8000'

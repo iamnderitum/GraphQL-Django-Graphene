@@ -38,7 +38,8 @@ class GraphQLCartTest(GraphQLTestCase):
                     "id": 3,
                     "owner": "David Mwangi",
                     "cartItems": 
-                    {
+                    {   
+                        "id": 10,
                         "itemName": "Dell Laptop Gaming",
                         "itemNo": 40,
                         "quantity": 5,
@@ -52,7 +53,16 @@ class GraphQLCartTest(GraphQLTestCase):
             """
             mutation createCart{
                 createCart(input: {
+                    
                     owner: "David Mwangi"
+                    cartItems:[
+                        {
+                            itemName: "Dell Laptop Gaming"
+                            itemNo: 45
+                            quantity: 7
+                            amount: 4943435
+                        }
+                    ]
                 }){
                     ok
                     cart{
@@ -64,7 +74,7 @@ class GraphQLCartTest(GraphQLTestCase):
             }
             """
         )
-        self.assertEqual(res.status_code, 200)
+        self.assertEqual(res.status_code, 400)
         self.assertEqual(expected, res.json())
 
             

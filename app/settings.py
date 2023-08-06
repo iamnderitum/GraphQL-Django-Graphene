@@ -82,12 +82,12 @@ WSGI_APPLICATION = "app.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
+        "ENGINE": "django.db.backends.mysql",
         "NAME": "authdb",
-        #"USER":"authuser",
-        #"PASSWORD":"auth123",
-        #"HOST":"localhost",
-        #"PORT":"5432"
+        "USER":"root",
+        "PASSWORD":"iamnderitum-007",
+        "HOST":"localhost",
+        "PORT":"3306"
     }
 }
 

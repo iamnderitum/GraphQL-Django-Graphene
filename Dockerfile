@@ -9,4 +9,5 @@ RUN pip install -r requirements.txt
 
 COPY . /app/
 
-CMD docker-entrypoint.sh
+#CMD /app/docker-entrypoint.sh
+ENTRYPOINT ["./docker-entrypoint.sh"]
